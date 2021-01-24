@@ -98,8 +98,9 @@ object Logic {
 
     val finalDF = listNew.join(AvgValueNew, col("index1").equalTo(col("index2")), "inner").drop("index1", "index2").orderBy($"Avg")
     println("Final Output :")
-    finalDF.show(15)
+    finalDF.show(100)
 
+    // Writing to file
     //finalDF.coalesce(1).write.format("com.databricks.spark.csv").save("C:\\Users\\Sourabh\\IdeaProjects\\Hackathon\\src\\main\\resources\\OutputFile")
 
   }
